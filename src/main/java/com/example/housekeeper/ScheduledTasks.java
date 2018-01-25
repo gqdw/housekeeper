@@ -21,7 +21,7 @@ public class ScheduledTasks {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    @Scheduled(fixedRate = 1000)
+    @Scheduled(fixedDelay = 1500)
     public void reportCurrentTime(){
         String sql2 = "delete from history_str where clock < 1514736000 limit 100";
         int row = jdbcTemplate.update(sql2);
